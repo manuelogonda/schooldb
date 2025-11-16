@@ -709,3 +709,10 @@ SELECT
    COUNT(CASE WHEN YEAR(birth_date) = 2004 THEN 1 END) AS born_2004s,
    COUNT(CASE WHEN YEAR(birth_date) = 2005 THEN 1 END) AS born_2005s
 FROM students;
+
+SELECT first_name,birth_date,
+  CASE WHEN YEAR(birth_date) = 2004 THEN 'born-2004'
+  WHEN YEAR(birth_date) = 2005 THEN 'born-2005'
+  ELSE  'Too young to be a student!'
+  END AS years_born_in
+FROM students;
