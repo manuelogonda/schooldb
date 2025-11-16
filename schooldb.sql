@@ -716,3 +716,13 @@ SELECT first_name,birth_date,
   ELSE  'Too young to be a student!'
   END AS years_born_in
 FROM students;
+
+--Reminder using UNION 
+--Selecting firstname and lastname from teachers and students alising a column role
+SELECT first_name,last_name, 'student' AS role
+FROM students
+
+UNION
+
+SELECT first_name,last_name, 'teacher' AS role
+FROM teachers;
