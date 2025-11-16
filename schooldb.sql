@@ -701,5 +701,11 @@ FROM teachers;
 SELECT first_name,hire_date, CEIL(ROUND((salary / 3), 3)) AS salary_roundedto3_roundedup
 FROM teachers;
 
+--SQL conditionals
+--1)CASE The CASE statement in SQL is used to create conditional logic 
+--within a query, allowing you to perform different actions based on specific conditions.
 
-
+SELECT 
+   COUNT(CASE WHEN YEAR(birth_date) = 2004 THEN 1 END) AS born_2004s,
+   COUNT(CASE WHEN YEAR(birth_date) = 2005 THEN 1 END) AS born_2005s
+FROM students;
