@@ -726,3 +726,23 @@ UNION
 
 SELECT first_name,last_name, 'teacher' AS role
 FROM teachers;
+
+
+--CASE continues
+SELECT class_id,class_start,duration,
+  CASE WHEN duration <= '1 hour' THEN 'Short class'
+       WHEN duration = '1.5 hours' THEN 'Medium class'
+       ELSE 'A long class'
+       END AS 'duration-described'
+FROM classes;
+
+--2)NULLIF  SQL function that compares two expressions and returns NULL if they are equal, 
+-- otherwise it returns the first expression.
+--Rturns true-1 for first condition and false-0 for second condition else returns NULL
+SELECT first_name,last_name,
+NULLIF(last_name LIKE '%z',last_name LIKE '%n') AS last_name_endwith
+FROM students;
+
+SELECT course_name,percent_popularity,
+NULLIF(percent_popularity >= 70,percent_popularity < 70) AS poularity_comparison
+FROM courses;
