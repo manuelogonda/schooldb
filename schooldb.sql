@@ -746,3 +746,10 @@ FROM students;
 SELECT course_name,percent_popularity,
 NULLIF(percent_popularity >= 70,percent_popularity < 70) AS poularity_comparison
 FROM courses;
+
+--3)COALESCE is an SQL function that returns the first non-null value in a list of expressions
+-- takes in two arguments the column with the NULL value,the actual value toreplae the null in the table[replaces NULL with a label]
+--It handles null values-Allows us do something with null values
+--i)Replace NULL with a Calculated Value
+--ii)Concatenating NULL and Strings
+--iii)
