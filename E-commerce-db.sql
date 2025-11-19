@@ -66,3 +66,15 @@ CREATE TABLE ProductTags (
     FOREIGN KEY (tag_id) REFERENCES Tags(id) ON DELETE CASCADE
 );
 
+--A join betweeen products,category and supplier used in ecommerce CRUD project
+SELECT p.id
+       p.name,
+       p.price,
+       c.category_name AS category_name,
+       s.supplier_name AS supplier_name
+FROM Products AS p 
+ INNER JOIN categories AS c
+ ON p.category_id = c.category_id,
+ INNER JOIN suplliers AS s
+ ON p.supplier_id = s.supplier_id
+ ORDER BY p.id;
